@@ -37,7 +37,6 @@ C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\SchoolWebSerVice.pdb
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\Antlr3.Runtime.dll
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\EntityFramework.dll
-C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\HtmlAgilityPack.dll
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\Newtonsoft.Json.dll
 C:\Users\Administrator\Documents\GitHub\School\SchoolWebSerVice\SchoolWebSerVice\bin\System.Net.Http.Formatting.dll

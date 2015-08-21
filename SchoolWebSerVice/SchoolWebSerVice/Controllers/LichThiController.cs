@@ -15,7 +15,7 @@ namespace SchoolWebSerVice.Controllers
 
         public IEnumerable<LichThi> GetAllLichThi()
         {
-            return GetHTML.getLichThi(GetHTML.makeUrlLT("3111410086", "1"));
+            return GetHTML.getLichThi(GetHTML.makeUrlLT("3112410012", "1"));
         }
 
     }
