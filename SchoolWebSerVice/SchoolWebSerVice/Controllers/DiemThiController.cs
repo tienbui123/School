@@ -13,10 +13,7 @@ namespace SchoolWebSerVice.Controllers
         //
         // GET: /DiemThi/
 
-        public DiemThi GetAllDiemThi()
-        {
-            return GetHTML.getDiemThi(GetHTML.makeUrlDT("3111410089"));
-        }
+       
 
     }
 }

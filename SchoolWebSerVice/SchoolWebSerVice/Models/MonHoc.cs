@@ -26,6 +26,7 @@ namespace SchoolWebSerVice.Models
 
         public string SoTC
         {
+
             get { return soTC; }
             set { soTC = value; }
         }
