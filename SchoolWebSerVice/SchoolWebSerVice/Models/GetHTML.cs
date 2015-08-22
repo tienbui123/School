@@ -24,63 +24,65 @@ namespace SchoolWebSerVice.Models
             HtmlDocument document = htmlWeb.Load(url);
             // dòng 1 
             HtmlNodeCollection nodes;
-            nodes = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]");
-            if (nodes != null)
-            {
-                ThoiKhoaBieu tkb = new ThoiKhoaBieu();
-                for (int j = 1; j <= 15; j++)
-                {
+            //nodes = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]/table[1]/table[1]/table[1]");
+            //if (nodes != null)
+            //{
+            //    ThoiKhoaBieu tkb = new ThoiKhoaBieu();
+            //    for (int j = 1; j <= 15; j++)
+            //    {
 
-                    HtmlNodeCollection nodes1 = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]/tr/td[" + j + "]");
-                    foreach (var node in nodes1)
-                    {
-                        switch (j)
-                        {
-                            case 1:
-                                tkb.MaMH = node.InnerText;
-                                break;
-                            case 2:
-                                tkb.TenMH = node.InnerText;
-                                break;
-                            case 3:
-                                tkb.NhomMH = node.InnerText;
-                                break;
-                            case 4:
-                                tkb.SoTC = node.InnerText;
-                                break;
-                            case 5:
-                                tkb.MaLop = node.InnerText;
-                                break;
-                            case 9:
-                                tkb.ThuTuan = node.InnerText;
-                                break;
-                            case 10:
-                                tkb.TietBD = node.InnerText;
-                                break;
-                            case 11:
-                                tkb.SoTiet = node.InnerText;
-                                break;
-                            case 12:
-                                tkb.Phong = node.InnerText;
-                                break;
-                            case 13:
-                                tkb.CBGD = node.InnerText;
-                                break;
-                            case 14:
-                                tkb.Tuan = node.InnerText;
-                                break;
-                        }
-                    }
-                }
-                tkbs.Add(tkb);
-            }
+            //        HtmlNodeCollection nodes1 = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]/table[1]/table[1]/table[1]/tr/td[" + j + "]");
+            //        foreach (var node in nodes1)
+            //        {
+            //            switch (j)
+            //            {
+            //                case 1:
+            //                    tkb.MaMH = node.InnerText;
+            //                    break;
+            //                case 2:
+            //                    tkb.TenMH = node.InnerText;
+            //                    break;
+            //                case 3:
+            //                    tkb.NhomMH = node.InnerText;
+            //                    break;
+            //                case 4:
+            //                    tkb.SoTC = node.InnerText;
+            //                    break;
+            //                case 5:
+            //                    tkb.MaLop = node.InnerText;
+            //                    break;
+            //                case 9:
+            //                    tkb.ThuTuan = node.InnerText;
+            //                    break;
+            //                case 10:
+            //                    tkb.TietBD = node.InnerText;
+            //                    break;
+            //                case 11:
+            //                    tkb.SoTiet = node.InnerText;
+            //                    break;
+            //                case 12:
+            //                    tkb.Phong = node.InnerText;
+            //                    break;
+            //                case 13:
+            //                    tkb.CBGD = node.InnerText;
+            //                    break;
+            //                case 14:
+            //                    tkb.Tuan = node.InnerText;
+            //                    break;
+            //            }
+            //        }
+            //    }
+            //    tkbs.Add(tkb);
+            //}
 
-            // dòng 2
-            int k = 1;
+             //all
+            string s = "/table[1]";
+            //int k=1;
             do
             {
-                nodes = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]/table[" + k + "]");
 
+                nodes = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]"+s);
+                //nodes = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table["+k+"]");
                 if (nodes != null)
                 {
 
@@ -88,7 +90,8 @@ namespace SchoolWebSerVice.Models
                     for (int j = 1; j <= 15; j++)
                     {
 
-                        HtmlNodeCollection nodes1 = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]/table[1]/table[" + k + "]/tr/td[" + j + "]");
+                        HtmlNodeCollection nodes1 = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]"+s+"/tr/td[" + j + "]");
+                        //HtmlNodeCollection nodes1 = document.DocumentNode.SelectNodes("//*[@id='ctl00_ContentPlaceHolder1_ctl00_pnlHeader']/table/tr[2]/td/div[2]"/table["+k+"] /tr/td[" + j + "]");
                         foreach (var node in nodes1)
                         {
                             switch (j)
@@ -125,14 +128,15 @@ namespace SchoolWebSerVice.Models
                                     tkb.CBGD = node.InnerText;
                                     break;
                                 case 14:
-                                    tkb.Tuan = node.InnerText;
+                                    tkb.Tuan = node.OuterHtml.Substring(node.OuterHtml.IndexOf("tuan('") + 6, 22);
                                     break;
                             }
                         }
                     }
                     tkbs.Add(tkb);
                 }
-                k++;
+              //  k++;
+                s += "/table[1]";
             }
             while (nodes != null);
             return tkbs;
